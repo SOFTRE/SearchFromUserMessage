@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns: xmlns: xmlns:>
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+    <script src="js/vuejs-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-on:keydown.enter="fun1">
+    <input type="text" v-on:keydown="fun2($event)">
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {},
+        methods: {
+            fun1: function () {
+                alert("enter")
+            },
+            fun2: function (e) {
+                var keyCode = e.keyCode;
+                if (keyCode == 13) {
+                    alert("enter")
+                }
+            }
+        }
+    });
+</script>
+</html>

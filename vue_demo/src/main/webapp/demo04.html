@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns: xmlns: xmlns:>
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+    <script src="js/vuejs-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    <form v-on:submit.prevent action="http://www.baidu.com">
+        <input type="submit" value=" 提交">
+    </form>
+    <div @click="fun1">
+<!--        prevent 和 stop-->
+        <a @click="fun3($event)" href="http://www.baidu.com">baidu</a>
+    </div>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message: "helloworld"
+        },
+        methods: {
+            fun1: function () {
+                alert(1);
+            },
+            fun2:function (e) {
+                e.preventDefault();
+            },
+            fun3:function (e) {
+                e.stopPropagation();
+            }
+        }
+    });
+</script>
+</html>

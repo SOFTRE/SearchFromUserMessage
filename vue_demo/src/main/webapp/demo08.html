@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns: xmlns: xmlns:
+      xmlns:v-text="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+    <script src="js/vuejs-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    用户名：<input type="text" v-model="user.username">
+    密码：<input type="text" v-model="user.password">
+    <input type="button" @click="fun1" value="按钮">
+</div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            user:{
+                username:"tom",
+                password:"123"
+            }
+        },
+        methods:{
+            fun1:function () {
+                alert(this.user.username+"="+this.user.password);
+                this.user.username="zhangsan";
+                this.user.password="1232";
+            }
+        }
+    });
+</script>
+</html>

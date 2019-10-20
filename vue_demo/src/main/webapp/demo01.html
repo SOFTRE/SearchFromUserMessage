@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns: xmlns: xmlns:>
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+    <script src="js/vuejs-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <!--    <button v-on:click="fun('good')"></button>-->
+    <button @click="fun('good')"></button>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message: "helloworld"
+        },
+        methods: {
+            fun: function (msg) {
+                this.message = msg;
+            }
+        }
+    });
+</script>
+</html>

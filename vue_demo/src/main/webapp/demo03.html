@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns: xmlns: xmlns:>
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+    <script src="js/vuejs-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-on:mouseover="fun1" style="width: 80%;height: 70%;background-color: red">
+        123456
+        <textarea v-on:mouseover="fun2(e)">abc</textarea>
+    </div>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message: "helloworld"
+        },
+        methods: {
+            fun1: function () {
+                alert("diyigequyu//")
+            },
+            fun2: function (e) {
+                alert("diergequyu//")
+                e.stopPropagation();
+            }
+        }
+    });
+</script>
+</html>

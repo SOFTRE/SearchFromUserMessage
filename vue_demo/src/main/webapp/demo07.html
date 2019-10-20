@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns: xmlns: xmlns:
+      xmlns:v-text="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+    <script src="js/vuejs-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    <font size="5" v-bind:color="ys1">百度</font>
+    <font size="5" color="ys2">度娘</font>
+    <a v-bind={href:"http://www.baidu.com/"+info}>baidu</a>
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            ys1: "red",
+            ys2: "green",
+            info:"s?rtt=1&bsst=1&cl=2&tn=news&word=s"
+        }
+    });
+</script>
+</html>

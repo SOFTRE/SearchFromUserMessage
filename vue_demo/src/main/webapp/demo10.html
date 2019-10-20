@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns: xmlns: xmlns:>
+<head>
+    <meta charset="UTF-8">
+    <title>demo01</title>
+    <script src="js/vuejs-2.6.10.js"></script>
+    <script src="js/axios-0.19.0.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+</div>
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            message:"helloworld"
+        },
+        methods:{
+            init:function () {
+                alert("传递的参数为："+this.message);
+                axios.get("./data/user.json").then(function (response) {
+                    console.log(response);
+                    alert(JSON.stringify(response));
+                    alert(response.data[0].username);
+                }).catch(function (error) {
+                    }
+                ).finally(
+                    function () {
+                    }
+                )
+            }
+        },
+        created:function () {
+            this.init();
+        }
+    });
+</script>
+</html>
